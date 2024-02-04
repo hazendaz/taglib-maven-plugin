@@ -82,11 +82,7 @@ public class TaglibdocMojo extends AbstractMavenReport implements MavenReport
     @Parameter
     private File xsltDir;
 
-    /**
-     * @see AbstractMavenReport#execute()
-     */
-    @Override
-    public void execute() throws MojoExecutionException
+    public void executeReport() throws MojoExecutionException
     {
         getLog().debug(MessageFormat.format(Messages.getString("Taglib.generating.tlddoc"), //$NON-NLS-1$
             srcDir.getAbsolutePath() ));
@@ -159,7 +155,7 @@ public class TaglibdocMojo extends AbstractMavenReport implements MavenReport
     {
         try
         {
-            execute();
+            executeReport();
         }
         catch (MojoExecutionException e)
         {
